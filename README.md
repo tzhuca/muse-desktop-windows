@@ -4,7 +4,7 @@ A Windows, macOS, and Linux desktop client for [Muse](https://muse.ai), Meta's M
 
 The app keeps a dedicated browser profile, opens the system file picker for uploads, saves downloads to the user's Downloads directory without overwriting existing names, and grants Muse's web notifications through the native desktop notification system.
 
-Development is in progress. 
+Development is in progress. If you have any questions about AI or application development, please contact me directly. 
 
 **I have code ZQFML4 for you to apply and you will get 1 billion token for free both of us.** 
 
