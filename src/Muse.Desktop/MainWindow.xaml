@@ -1,0 +1,68 @@
+<Window x:Class="Muse.Desktop.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        Title="Muse"
+        Width="1180"
+        Height="820"
+        MinWidth="760"
+        MinHeight="540"
+        Background="#101117"
+        Icon="/Resources/Muse.ico"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#101117">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <wv2:WebView2 x:Name="WebView" Grid.Row="0" />
+
+        <!-- Status bar -->
+        <Border Grid.Row="1"
+                Background="#1A1B22"
+                BorderBrush="#2A2B33"
+                BorderThickness="0,1,0,0"
+                Padding="10,4">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Ellipse x:Name="StatusDot"
+                         Grid.Column="0"
+                         Width="8"
+                         Height="8"
+                         Fill="#888888"
+                         VerticalAlignment="Center" />
+
+                <TextBlock x:Name="StatusText"
+                           Grid.Column="1"
+                           Text="Goose API: checking"
+                           Foreground="#AAAAAA"
+                           FontSize="12"
+                           Margin="8,0,0,0"
+                           VerticalAlignment="Center" />
+
+                <TextBlock x:Name="DbText"
+                           Grid.Column="2"
+                           Text=""
+                           Foreground="#777777"
+                           FontSize="12"
+                           Margin="12,0,0,0"
+                           VerticalAlignment="Center" />
+
+                <Button x:Name="SessionsButton"
+                        Grid.Column="4"
+                        Content="Sessions"
+                        Padding="10,2"
+                        FontSize="12"
+                        Click="OnSessionsClick" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

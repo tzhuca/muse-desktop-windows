@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Muse.Mobile.ConversationPage"
+             Title="Conversation"
+             BackgroundColor="#101117">
+
+    <Grid RowDefinitions="Auto,*,Auto,Auto"
+          Padding="10">
+
+        <!-- Title -->
+        <Label x:Name="TitleLabel"
+               Grid.Row="0"
+               TextColor="#FFFFFF"
+               FontSize="16"
+               FontAttributes="Bold"
+               Margin="0,0,0,10" />
+
+        <!-- Messages -->
+        <CollectionView Grid.Row="1"
+                        x:Name="MessageList"
+                        BackgroundColor="#101117">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="8,6">
+                        <Label Text="{Binding .}"
+                               TextColor="#CCCCCC"
+                               FontSize="13" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <!-- Role Selector -->
+        <Picker x:Name="RolePicker"
+                Grid.Row="2"
+                Title="Role"
+                TextColor="#FFFFFF"
+                BackgroundColor="#1A1B22"
+                Margin="0,8,0,0">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>user</x:String>
+                    <x:String>assistant</x:String>
+                    <x:String>system</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- Input -->
+        <Grid Grid.Row="3"
+              ColumnDefinitions="*,Auto"
+              Margin="0,8,0,0">
+            <Entry x:Name="InputEntry"
+                   Grid.Column="0"
+                   Placeholder="Type a message..."
+                   TextColor="#FFFFFF"
+                   PlaceholderColor="#777777"
+                   BackgroundColor="#1A1B22"
+                   ReturnType="Send"
+                   Completed="OnSendClicked" />
+
+            <Button Grid.Column="1"
+                    Text="Send"
+                    Clicked="OnSendClicked"
+                    BackgroundColor="#2A2B33"
+                    TextColor="#FFFFFF"
+                    Margin="8,0,0,0" />
+        </Grid>
+    </Grid>
+
+</ContentPage>

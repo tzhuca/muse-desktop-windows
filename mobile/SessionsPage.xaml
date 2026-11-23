@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Muse.Mobile.SessionsPage"
+             Title="Sessions"
+             BackgroundColor="#101117">
+
+    <Grid RowDefinitions="Auto,*"
+          Padding="10">
+
+        <!-- Toolbar -->
+        <HorizontalStackLayout Grid.Row="0"
+                               Spacing="10"
+                               Padding="0,0,0,10">
+            <Button Text="New"
+                    Clicked="OnNewClicked"
+                    BackgroundColor="#2A2B33"
+                    TextColor="#FFFFFF" />
+            <Button Text="Delete"
+                    Clicked="OnDeleteClicked"
+                    BackgroundColor="#2A2B33"
+                    TextColor="#FFFFFF" />
+        </HorizontalStackLayout>
+
+        <!-- Conversation List -->
+        <CollectionView Grid.Row="1"
+                        x:Name="ConversationList"
+                        SelectionMode="Single"
+                        SelectionChanged="OnConversationSelected"
+                        BackgroundColor="#101117">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="10,8"
+                          ColumnDefinitions="*,Auto">
+                        <Label Grid.Column="0"
+                               Text="{Binding Title}"
+                               TextColor="#FFFFFF"
+                               FontSize="14"
+                               VerticalOptions="Center" />
+                        <Label Grid.Column="1"
+                               Text="{Binding MessageCount, StringFormat='{}{0} msg'}"
+                               TextColor="#777777"
+                               FontSize="12"
+                               VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Muse.Mobile.MainPage"
+             Title="Muse"
+             BackgroundColor="#101117">
+
+    <Grid RowDefinitions="*,Auto">
+        <!-- Muse Web View -->
+        <WebView x:Name="MuseWebView"
+                 Grid.Row="0"
+                 BackgroundColor="#101117" />
+
+        <!-- Status Bar -->
+        <Grid Grid.Row="1"
+              BackgroundColor="#1A1B22"
+              Padding="12,6"
+              ColumnDefinitions="Auto,Auto,Auto,*,Auto">
+
+            <Ellipse x:Name="StatusDot"
+                     Grid.Column="0"
+                     WidthRequest="8"
+                     HeightRequest="8"
+                     Fill="#888888"
+                     VerticalOptions="Center" />
+
+            <Label x:Name="StatusText"
+                   Grid.Column="1"
+                   Text="Goose API: checking"
+                   TextColor="#AAAAAA"
+                   FontSize="12"
+                   Margin="8,0,0,0"
+                   VerticalOptions="Center" />
+
+            <Label x:Name="DbText"
+                   Grid.Column="2"
+                   Text=""
+                   TextColor="#777777"
+                   FontSize="12"
+                   Margin="12,0,0,0"
+                   VerticalOptions="Center" />
+
+            <Button x:Name="SessionsButton"
+                    Grid.Column="4"
+                    Text="Sessions"
+                    FontSize="12"
+                    Padding="12,4"
+                    BackgroundColor="#2A2B33"
+                    TextColor="#FFFFFF"
+                    Clicked="OnSessionsClicked" />
+        </Grid>
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,14 @@
+<Window x:Class="Muse.Desktop.PopupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        Title="Muse"
+        Width="600"
+        Height="760"
+        Background="#101117"
+        Icon="/Resources/Muse.ico"
+        WindowStartupLocation="CenterScreen">
+    <Grid Background="#101117">
+        <wv2:WebView2 x:Name="WebView" />
+    </Grid>
+</Window>
